@@ -435,10 +435,9 @@ class CrontabManager {
         $contents[] = $pre;
         $contents[] = '';
 
-        foreach ($this->files as $jobs) {
-            foreach ($jobs as $job) {
-                $contents[] = $job;
-            }
+        $jobs = $this->files[$file];
+        foreach ($jobs as $job) {
+            $contents[] = $job;
         }
 
         $contents[] = '';
